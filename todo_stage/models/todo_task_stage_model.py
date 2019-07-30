@@ -24,3 +24,5 @@ class Stage(models.Model):
 
     fold = fields.Boolean('Floded?')
     image = fields.Binary('Image')
+
+    task_ids = fields.One2many('todo.task', 'stage_id', 'Tasks in this stage')
