@@ -10,5 +10,11 @@
 	<menuitem id="menu_todo_task"
 		name="Todos"
 		action="action_todo_task"
-		/>
+        />
+    <!-- Modify Window Action Item -->
+    <record id="todo_app.action_todo_task" model="ir.actions.act_window">
+        <field name="context">
+            {'search_default_filter_not_done': True}
+        </field>
+    </record>
 </odoo>
