@@ -10,8 +10,8 @@ class TodoTask(models.Model):
     child_ids = fields.One2many('todo.task.tag', 'parent_id', 'Child Tags')
     stage_fold = fields.Boolean(
             'Stage Folded?',
-            compute='_compute_stage_fold'
-            search='_search_stage_fold'
+            compute='_compute_stage_fold',
+            search='_search_stage_fold',
             inverse='_write_stage_fold')
     state = fields.Selection(
             related='stage_id.state',

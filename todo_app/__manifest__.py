@@ -12,4 +12,8 @@
             'views/res_partner_view.xml',
             'views/index_template.xml',
         ],
+        'demo': [
+            'data/todo.task.csv',
+            'data/todo_task.xml',
+        ],
 }

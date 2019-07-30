@@ -6,6 +6,7 @@ class TodoTask(models.Model):
     name = fields.Char('Description', required=True)
     is_done = fields.Boolean('Done?')
     active = fields.Boolean('Active?', default=True)
+    date_deadline = fields.Date('Dead Line')
     user_id = fields.Many2one(
             'res.users',
             string='Responsible',
