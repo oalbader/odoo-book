@@ -40,3 +40,15 @@ class TodoTask(models.Model):
         for todo in self:
             if len(todo.name) < 5:
                 raise ValidationError('Must have 5 characters!')
+
+    @api.onchange('user_id')
+    def onchange_user_id(self):
+        if not self.user_id:
+            self.team_ids = None
+            self.message_post('Hello', subtype='mail.mt_comment')
+            return {
+                'warning': {
+                    'title': 'No Responsible',
+                    'message': 'Team was also reset.'
+                }
+            }
